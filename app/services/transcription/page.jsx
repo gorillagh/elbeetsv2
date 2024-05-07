@@ -15,7 +15,7 @@ export const metadata = {
   title: "Transcription",
 };
 
-const TranscriptionPage = () => {
+export default function TranscriptionPage() {
   return (
     <div>
       <Box mb={5} py={12}>
@@ -101,6 +101,4 @@ const TranscriptionPage = () => {
       </Box>
     </div>
   );
-};
-
-export default TranscriptionPage;
+}

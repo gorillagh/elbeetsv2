@@ -8,7 +8,7 @@ import Image from "next/image";
 import captioningSamplePreview from "@/app/images/captioning-sample-preview.png";
 import BodyLink from "@/app/components/Links/BodyLink";
 
-const CaptioningFeatureSection = () => {
+export default function CaptioningFeatureSection() {
   return (
     <Container maxWidth="lg">
       <Grid mb={12} container spacing={2} disableEqualOverflow={true}>
@@ -46,6 +46,4 @@ const CaptioningFeatureSection = () => {
       </Grid>
     </Container>
   );
-};
-
-export default CaptioningFeatureSection;
+}

@@ -30,7 +30,8 @@ const radios = [
   { label: "Standard", value: "standard" },
   { label: "Express", value: "express" },
 ];
-const CostEstimationSection = () => {
+
+export default function CostEstimationSection() {
   const [service, setService] = useState("Transcription");
   return (
     <Container maxWidth="lg">
@@ -222,6 +223,4 @@ const CostEstimationSection = () => {
       </Box>
     </Container>
   );
-};
-
-export default CostEstimationSection;
+}

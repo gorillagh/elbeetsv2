@@ -64,7 +64,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: "1px solid rgba(0, 0, 0, .125)",
 }));
 
-const FAQCard = (props) => {
+export default function FAQCard(props) {
   const [expanded, setExpanded] = useState("panel1");
 
   const handleChange = (panel) => (event, newExpanded) => {
@@ -96,13 +96,28 @@ const FAQCard = (props) => {
             <Typography variant="caption">{faq.answer}</Typography>
           </AccordionDetails>
         </Accordion>
-      ))}
+      )) ||
+        faqs.map((faq, index) => (
+          <Accordion
+            expanded={expanded === faq.panel}
+            onChange={handleChange(faq.panel)}
+            key={index}
+          >
+            <AccordionSummary
+              aria-controls={`${faq.panel}d-content`}
+              id={`${faq.panel}d-header`}
+            >
+              <Typography variant="bodyText1">{faq.question}</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography variant="caption">{faq.answer}</Typography>
+            </AccordionDetails>
+          </Accordion>
+        ))}
     </Card>
   );
-};
+}
 
-FAQCard.defaultProps = {
-  faqs,
-};
-
-export default FAQCard;
+// FAQCard.defaultProps = {
+//   faqs,
+// };

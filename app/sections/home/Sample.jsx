@@ -7,25 +7,27 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import ServiceSelect from "@/app/components/Inputs/ServiceSelect";
 // import ReactPlayer from "react-player/lazy";
-import { Card, CardContent, Skeleton } from "@mui/material";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Skeleton from "@mui/material/Skeleton";
 import Image from "next/image";
 import Loading from "../../../public/loadingSpin.gif";
 import Thumbnail from "../../images/Translator-bro.png";
 import dynamic from "next/dynamic";
 
-// const ReactPlayer = dynamic(() => import("react-player"), {
-//   ssr: false,
-//   loading: () => (
-//     <Box
-//       width="500px"
-//       display="flex"
-//       alignItems="center"
-//       justifyContent="center"
-//     >
-//       <Image src={Loading} alt="loading" />
-//     </Box>
-//   ),
-// });
+const ReactPlayer = dynamic(() => import("react-player"), {
+  ssr: false,
+  loading: () => (
+    <Box
+      width="500px"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Image src={Loading} alt="loading" />
+    </Box>
+  ),
+});
 
 const services = [
   {
@@ -41,7 +43,7 @@ const services = [
     value: "Translation",
   },
 ];
-const SampleSection = () => {
+export default function SampleSection() {
   const playerRef = useRef(null);
   const [highlightedIndex, setHighlightedIndex] = useState(0);
 
@@ -82,31 +84,31 @@ const SampleSection = () => {
       </Typography>
       <Grid container spacing={2} disableEqualOverflow={true}>
         <Grid item xs={12} md={7} display="flex" alignItems="center">
-          {/* <Box>
+          <Box>
             <ReactPlayer
-              light={
-                <Box
-                  width="500px"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                >
-                  <Image
-                    width={400}
-                    height={400}
-                    src={Thumbnail}
-                    alt="Thumbnail"
-                    // fill
-                    // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </Box>
-              }
+              // light={
+              //   <Box
+              //     width="500px"
+              //     display="flex"
+              //     alignItems="center"
+              //     justifyContent="center"
+              //   >
+              //     <Image
+              //       width={400}
+              //       height={400}
+              //       src={Thumbnail}
+              //       alt="Thumbnail"
+              //       // fill
+              //       // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              //     />
+              //   </Box>
+              // }
               ref={playerRef}
               controls
               onProgress={handleProgress}
               url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
             />
-          </Box> */}
+          </Box>
         </Grid>
         <Grid
           item
@@ -138,6 +140,4 @@ const SampleSection = () => {
       </Grid>
     </Container>
   );
-};
-
-export default SampleSection;
+}

@@ -12,7 +12,7 @@ import { authenticate, signInWithGoogle } from "@/app/lib/authActions";
 import { useRouter, useSearchParams } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 
-const LoginForm = (props) => {
+export default function LoginForm(props) {
   const initialState = { message: null, errors: {} };
   const [state, dispatch] = useFormState(authenticate, initialState);
   const router = useRouter();
@@ -67,7 +67,7 @@ const LoginForm = (props) => {
       </Box>
     </Box>
   );
-};
+}
 
 const Fields = ({ callbackUrl }) => {
   const { pending } = useFormStatus();
@@ -103,5 +103,3 @@ const LoginButton = () => {
     </>
   );
 };
-
-export default LoginForm;

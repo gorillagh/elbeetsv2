@@ -4,13 +4,13 @@ import FormControl from "@mui/material/FormControl";
 import { Box, Typography } from "@mui/material";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 
-const InputField = (props) => {
+export default function InputField(props) {
   return (
     <FormControl variant="outlined" fullWidth sx={{ my: 1 }}>
       <TextField
         error={props.error}
-        label={props.label}
-        type={props.type}
+        label={props.label || "text"}
+        type={props.type || "text"}
         helperText={props.helperText}
         {...props}
       />
@@ -29,10 +29,9 @@ const InputField = (props) => {
       </Box>
     </FormControl>
   );
-};
+}
 
-InputField.defaultProps = {
-  label: "text",
-  type: "text",
-};
-export default InputField;
+// InputField.defaultProps = {
+//   label: "text",
+//   type: "text",
+// };

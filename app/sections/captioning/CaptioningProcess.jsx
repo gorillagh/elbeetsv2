@@ -50,7 +50,7 @@ const steps = [
   },
 ];
 
-const CaptioningProcessSection = () => {
+export default function CaptioningProcessSection() {
   return (
     <Container maxWidth="lg">
       <Typography
@@ -90,6 +90,4 @@ const CaptioningProcessSection = () => {
       </Box>
     </Container>
   );
-};
-
-export default CaptioningProcessSection;
+}

@@ -50,7 +50,7 @@ const steps = [
   },
 ];
 
-const TranscriptionProcessSection = () => {
+export default function TranscriptionProcessSection() {
   return (
     <Container maxWidth="lg">
       <Typography
@@ -90,6 +90,4 @@ const TranscriptionProcessSection = () => {
       </Box>
     </Container>
   );
-};
-
-export default TranscriptionProcessSection;
+}

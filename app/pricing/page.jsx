@@ -12,7 +12,7 @@ export const metadata = {
   title: "Pricing",
 };
 
-const page = () => {
+export default function PricingPage() {
   return (
     <>
       <Box bgcolor="background.colored" mb={5} py={12}>
@@ -58,6 +58,4 @@ const page = () => {
       </Box>
     </>
   );
-};
-
-export default page;
+}

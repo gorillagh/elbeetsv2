@@ -7,7 +7,7 @@ import CardHeader from "@mui/material/CardHeader";
 import ActionButton from "../Buttons/ActionButton";
 import LinkButton from "../Buttons/LinkButton";
 
-const ServiceCard = (props) => {
+export default function ServiceCard(props) {
   return (
     <Card
       // raised={true}
@@ -22,28 +22,33 @@ const ServiceCard = (props) => {
       }}
     >
       <CardHeader
-        subheader={props.subheader}
-        title={<Typography variant="subheading">{props.title}</Typography>}
+        subheader={props.subheader || "Audio & Video"}
+        title={
+          <Typography variant="subheading">
+            {props.title || "Transcription"}
+          </Typography>
+        }
       />
 
       <CardContent>
         <Typography color="primary.light" variant="bodyText1">
-          {props.bodyText}
+          {props.bodyText || "Body Text"}
         </Typography>
       </CardContent>
       <CardActions>
-        <LinkButton text={props.buttonText} href={props.href} />
+        <LinkButton
+          text={props.buttonText || "Place Order"}
+          href={props.href || "/"}
+        />
       </CardActions>
     </Card>
   );
-};
+}
 
-ServiceCard.defaultProps = {
-  buttonText: "Place Order",
-  bodyText: "Body Text",
-  title: "Transcription",
-  subheader: "Audio & Video",
-  href: "/",
-};
-
-export default ServiceCard;
+// ServiceCard.defaultProps = {
+//   buttonText: "Place Order",
+//   bodyText: "Body Text",
+//   title: "Transcription",
+//   subheader: "Audio & Video",
+//   href: "/",
+// };

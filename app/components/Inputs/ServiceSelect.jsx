@@ -21,7 +21,7 @@ const services = [
     value: "Translation",
   },
 ];
-const ServiceSelect = (props) => {
+export default function ServiceSelect(props) {
   return (
     <FormControl>
       <InputLabel id="service-select-label">Service</InputLabel>
@@ -38,12 +38,13 @@ const ServiceSelect = (props) => {
           <MenuItem key={index} value={service.value}>
             {service.name}
           </MenuItem>
-        ))}
+        )) ||
+          services.map((service, index) => (
+            <MenuItem key={index} value={service.value}>
+              {service.name}
+            </MenuItem>
+          ))}
       </Select>
     </FormControl>
   );
-};
-
-ServiceSelect.defaultProps = { services };
-
-export default ServiceSelect;
+}

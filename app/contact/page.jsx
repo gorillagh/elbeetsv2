@@ -18,7 +18,7 @@ export const metadata = {
   title: "Contact Us",
 };
 
-const ContactPage = () => {
+export default function ContactPage() {
   return (
     <div>
       <Box mb={5} py={6} bgcolor="background.colored">
@@ -164,6 +164,4 @@ const ContactPage = () => {
       </Box>
     </div>
   );
-};
-
-export default ContactPage;
+}

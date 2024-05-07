@@ -5,7 +5,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Unstable_Grid2";
 import TeamMemeberCard from "@/app/components/Cards/TeamMemeberCard";
 
-const TeamSection = () => {
+export default function TeamSection() {
   return (
     <Container maxWidth="lg">
       <Box textAlign="center" mb={6}>
@@ -47,6 +47,4 @@ const TeamSection = () => {
       </Box>
     </Container>
   );
-};
-
-export default TeamSection;
+}

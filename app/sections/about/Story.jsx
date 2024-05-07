@@ -38,7 +38,7 @@ const stories = [
   },
 ];
 
-const StorySection = () => {
+export default function StorySection() {
   return (
     <Container maxWidth="lg">
       <Box textAlign="center">
@@ -70,6 +70,4 @@ const StorySection = () => {
       </Box>
     </Container>
   );
-};
-
-export default StorySection;
+}

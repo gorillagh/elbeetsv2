@@ -27,7 +27,7 @@ const logos = [
   zoom,
   fifa,
 ];
-const ClienteleSection = () => {
+export default function ClienteleSection() {
   return (
     <Container maxWidth="lg">
       <Box textAlign="center">
@@ -61,6 +61,4 @@ const ClienteleSection = () => {
       </Box>
     </Container>
   );
-};
-
-export default ClienteleSection;
+}

@@ -43,7 +43,7 @@ const features = [
   },
 ];
 
-const FeatureSection = () => {
+export default function FeatureSection() {
   return (
     <Container maxWidth="lg">
       <Box my={6}>
@@ -125,6 +125,4 @@ const FeatureSection = () => {
       </Box>
     </Container>
   );
-};
-
-export default FeatureSection;
+}

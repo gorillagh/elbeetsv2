@@ -8,7 +8,7 @@ import generalTranscription from "@/app/images/features/general.png";
 import specializedTranscription from "@/app/images/features/specialized-transcription.png";
 import turnaround from "@/app/images/features/turnaround.png";
 
-const TranscriptionFeatureSection = () => {
+export default function TranscriptionFeatureSection() {
   return (
     <Container maxWidth="lg">
       <Grid mb={12} container spacing={2} disableEqualOverflow={true}>
@@ -94,6 +94,4 @@ const TranscriptionFeatureSection = () => {
       </Grid>
     </Container>
   );
-};
-
-export default TranscriptionFeatureSection;
+}

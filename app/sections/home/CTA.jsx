@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import LinkButton from "@/app/components/Buttons/LinkButton";
 
-const CTASection = () => {
+export default function CTASection() {
   return (
     <Container maxWidth="lg">
       <Box textAlign="center">
@@ -31,13 +31,16 @@ const CTASection = () => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Box width={{ md: "70%" }} mx="auto">
-              <LinkButton text="Get Started" fontSize="1.3rem" href="/" />
+              <LinkButton
+                text="Get Started"
+                fontSize="1.3rem"
+                href="/"
+                type="secondary"
+              />
             </Box>
           </Grid>
         </Grid>
       </Box>
     </Container>
   );
-};
-
-export default CTASection;
+}

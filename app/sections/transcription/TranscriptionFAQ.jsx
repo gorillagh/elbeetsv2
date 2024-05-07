@@ -66,7 +66,7 @@ const faqs = [
   },
 ];
 
-const TranscriptionFAQSection = () => {
+export default function TranscriptionFAQSection() {
   return (
     <Container maxWidth="lg">
       <Box width={{ md: "70%" }} mx="auto">
@@ -74,6 +74,4 @@ const TranscriptionFAQSection = () => {
       </Box>
     </Container>
   );
-};
-
-export default TranscriptionFAQSection;
+}

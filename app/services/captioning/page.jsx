@@ -13,7 +13,7 @@ export const metadata = {
   title: "Captioning",
 };
 
-const CaptioningPage = () => {
+export default function CaptioningPage() {
   return (
     <div>
       <Box mb={5} py={12}>
@@ -71,6 +71,4 @@ const CaptioningPage = () => {
       </Box>
     </div>
   );
-};
-
-export default CaptioningPage;
+}

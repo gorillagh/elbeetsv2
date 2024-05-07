@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 import Avatar from "@mui/material/Avatar";
 
-const StepCard = (props) => {
+export default function StepCard(props) {
   return (
     <Box
       sx={{
@@ -19,25 +19,27 @@ const StepCard = (props) => {
         aria-label="recipe"
       >
         <Typography variant="bodyText2" fontWeight={700} color="#fff">
-          {props.number}
+          {props.number || 1}
         </Typography>
       </Avatar>
       <Box display="flex" flexDirection="column">
-        {props.icon}
+        {props.icon || (
+          <QuestionMarkIcon fontSize="large" sx={{ color: "warning.light" }} />
+        )}
         <Typography variant="subSubheading" my={1}>
-          {props.title}
+          {props.title || "Feature"}
         </Typography>
-        <Typography variant="bodyText2">{props.bodyText}</Typography>
+        <Typography variant="bodyText2">
+          {props.bodyText || "Body Text"}
+        </Typography>
       </Box>
     </Box>
   );
-};
+}
 
-StepCard.defaultProps = {
-  number: 1,
-  bodyText: "Body Text",
-  title: "Feature",
-  icon: <QuestionMarkIcon fontSize="large" sx={{ color: "warning.light" }} />,
-};
-
-export default StepCard;
+// StepCard.defaultProps = {
+//   number: 1,
+//   bodyText: "Body Text",
+//   title: "Feature",
+//   icon: <QuestionMarkIcon fontSize="large" sx={{ color: "warning.light" }} />,
+// };

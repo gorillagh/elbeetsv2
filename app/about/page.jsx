@@ -13,7 +13,7 @@ export const metadata = {
   title: "About",
 };
 
-const AboutPage = () => {
+export default function AboutPage() {
   return (
     <div>
       <Box bgcolor="background.colored" mb={5} py={12}>
@@ -73,6 +73,4 @@ const AboutPage = () => {
       </Box>
     </div>
   );
-};
-
-export default AboutPage;
+}

@@ -22,16 +22,14 @@ import NavLink from "../Links/NavLink";
 import ActionButton from "../Buttons/ActionButton";
 import Link from "next/link";
 import Image from "next/image";
-import { signOut } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "@mui/material";
-import LinkButton from "../Buttons/LinkButton";
 import { logout } from "@/app/lib/authActions";
 
 const pages = ["Pricing", "Support", "About"];
 const settings = ["Dashboard", "Profile", "Account"];
 
-function MainNav(props) {
+export default function MainNav(props) {
   const [anchorElUser, setAnchorElUser] = useState(null);
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -377,4 +375,3 @@ function MainNav(props) {
     </>
   );
 }
-export default MainNav;

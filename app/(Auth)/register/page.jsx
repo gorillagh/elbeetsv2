@@ -6,7 +6,7 @@ export const metadata = {
   title: "Sign Up",
 };
 
-const Register = () => {
+export default function Register() {
   return (
     <Box py={10}>
       <Container maxWidth="lg">
@@ -20,6 +20,4 @@ const Register = () => {
       </Container>
     </Box>
   );
-};
-
-export default Register;
+}

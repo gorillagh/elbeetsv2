@@ -8,7 +8,7 @@ import ActionButton from "../Buttons/ActionButton";
 import Box from "@mui/material/Box";
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 
-const FeatureCard = (props) => {
+export default function FeatureCard(props) {
   return (
     <Card
       variant="outlined"
@@ -22,9 +22,9 @@ const FeatureCard = (props) => {
       <CardHeader
         title={
           <Box>
-            {props.featureIcon}
+            {props.featureIcon || <QuestionMarkIcon fontSize="large" />}
             <Typography variant="subSubheading" color="text.secondary">
-              {props.title}
+              {props.title || "Feature"}
             </Typography>
           </Box>
         }
@@ -34,12 +34,10 @@ const FeatureCard = (props) => {
       </CardContent> */}
     </Card>
   );
-};
+}
 
-FeatureCard.defaultProps = {
-  // bodyText: "Body Text",
-  title: "Feature",
-  featureIcon: <QuestionMarkIcon fontSize="large" />,
-};
-
-export default FeatureCard;
+// FeatureCard.defaultProps = {
+//   // bodyText: "Body Text",
+//   title: "Feature",
+//   featureIcon: <QuestionMarkIcon fontSize="large" />,
+// };

@@ -31,7 +31,7 @@ const fields = [
     icon: <LocalHospitalIcon style={iconStyle} />,
   },
 ];
-const TranscriptionScopeSection = () => {
+export default function TranscriptionScopeSection() {
   return (
     <Container maxWidth="lg">
       <Box textAlign="center">
@@ -71,6 +71,4 @@ const TranscriptionScopeSection = () => {
       </Box>
     </Container>
   );
-};
-
-export default TranscriptionScopeSection;
+}

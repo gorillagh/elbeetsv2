@@ -8,7 +8,7 @@ export const metadata = {
   title: "Login",
 };
 
-const Login = ({ searchParams }) => {
+export default function Login({ searchParams }) {
   return (
     <Box py={10}>
       <Container maxWidth="lg">
@@ -33,6 +33,4 @@ const Login = ({ searchParams }) => {
       </Container>
     </Box>
   );
-};
-
-export default Login;
+}

@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
 import LinkButton from "@/app/components/Buttons/LinkButton";
 
-const TranscriptionHeroSection = () => {
+export default function TranscriptionHeroSection() {
   return (
     <div>
       <Container maxWidth="lg">
@@ -48,6 +48,4 @@ const TranscriptionHeroSection = () => {
       </Container>
     </div>
   );
-};
-
-export default TranscriptionHeroSection;
+}

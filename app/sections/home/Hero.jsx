@@ -20,7 +20,7 @@ const heroItems = [
   "At a Reasonable Cost",
 ];
 
-const HeroSection = () => {
+export default function HeroSection() {
   return (
     <Container maxWidth="lg">
       <Grid container spacing={12} disableEqualOverflow={true}>
@@ -87,6 +87,4 @@ const HeroSection = () => {
       </Grid>
     </Container>
   );
-};
-
-export default HeroSection;
+}

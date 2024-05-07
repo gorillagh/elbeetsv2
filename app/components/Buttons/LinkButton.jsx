@@ -10,11 +10,11 @@ export default function LinkButton(props) {
     <Link
       className=""
       href={{
-        pathname: props.href,
+        pathname: props.href || "/",
         query: props.query,
       }}
-      scroll={props.scroll}
-      replace={props.replace}
+      scroll={props.scroll || true}
+      replace={props.replace || false}
       passHref
       style={{ width: "100%", textDecoration: "none" }}
     >
@@ -27,13 +27,13 @@ export default function LinkButton(props) {
         justifyContent="center"
         sx={{
           py: 1,
-          fontSize: props.fontSize,
+          fontSize: props.fontSize || "1.1rem",
           borderRadius: 5,
           textTransform: "capitalize",
           color:
-            props.type === "primary" || props.type === "secondary"
+            (props.type === "primary" || props.type === "secondary"
               ? "#fff"
-              : theme.palette.secondary.main,
+              : theme.palette.secondary.main) || "#fff",
           bgcolor:
             props.type === "primary"
               ? theme.palette.primary.main
@@ -60,11 +60,11 @@ export default function LinkButton(props) {
   );
 }
 
-LinkButton.defaultProps = {
-  scroll: true,
-  type: "secondary",
-  color: "#fff",
-  fontSize: "1.1rem",
-  href: "/",
-  replace: false,
-};
+// LinkButton.defaultProps = {
+//   scroll: true,
+//   type: "secondary",
+//   color: "#fff",
+//   fontSize: "1.1rem",
+//   href: "/",
+//   replace: false,
+// };

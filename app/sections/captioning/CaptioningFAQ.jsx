@@ -54,7 +54,7 @@ const faqs = [
   },
 ];
 
-const CaptioningFAQSection = () => {
+export default function CaptioningFAQSection() {
   return (
     <Container maxWidth="lg">
       <Box width={{ md: "70%" }} mx="auto">
@@ -62,6 +62,4 @@ const CaptioningFAQSection = () => {
       </Box>
     </Container>
   );
-};
-
-export default CaptioningFAQSection;
+}

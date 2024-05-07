@@ -3,14 +3,14 @@ import Link from "next/link";
 import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
 
-const FooterLink = (props) => {
+export default function FooterLink(props) {
   return (
     <Link
       href={{
         pathname: props.pathname,
         query: props.query,
       }}
-      scroll={props.scroll}
+      scroll={props.scroll || true}
       {...props}
       legacyBehavior
     >
@@ -24,17 +24,16 @@ const FooterLink = (props) => {
         }}
         component={props.component}
       >
-        {props.text}
+        {props.text || "Link text"}
       </Typography>
     </Link>
   );
-};
+}
 
-FooterLink.defaultProps = {
-  scroll: true,
-  textTransform: "capitalize",
-  color: "",
-  text: "Link text",
-  textDecoration: "none",
-};
-export default FooterLink;
+// FooterLink.defaultProps = {
+//   scroll: true,
+//   textTransform: "capitalize",
+//   color: "",
+//   text: "Link text",
+//   textDecoration: "none",
+// };

@@ -1,20 +1,20 @@
 import React from "react";
 import Button from "@mui/material/Button";
 
-const ActionButton = (props) => {
+export default function ActionButton(props) {
   return (
     <Button
       type={props.type}
       fullWidth
-      variant={props.variant}
-      color={props.color}
+      variant={props.variant || "contained"}
+      color={props.color || "secondary"}
       size={props.size}
       startIcon={props.startIcon}
       endIcon={props.endIcon}
       sx={{
         my: props.my,
         mx: props.mx,
-        fontSize: props.fontSize,
+        fontSize: props.fontSize || "1.1rem",
         borderRadius: 5,
         textTransform: "capitalize",
         color: props.variant !== "contained" ? "" : "#fff",
@@ -29,12 +29,4 @@ const ActionButton = (props) => {
       {props.text}
     </Button>
   );
-};
-
-ActionButton.defaultProps = {
-  variant: "contained",
-  color: "secondary",
-  fontSize: "1.1rem",
-};
-
-export default ActionButton;
+}

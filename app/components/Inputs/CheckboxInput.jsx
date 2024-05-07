@@ -69,12 +69,8 @@ function BpCheckbox(props) {
   );
 }
 
-const CheckboxInput = (props) => {
-  return <FormControlLabel control={<BpCheckbox />} label={props.label} />;
-};
-
-CheckboxInput.defaultProps = {
-  label: "Label",
-};
-
-export default CheckboxInput;
+export default function CheckboxInput(props) {
+  return (
+    <FormControlLabel control={<BpCheckbox />} label={props.label || "Label"} />
+  );
+}

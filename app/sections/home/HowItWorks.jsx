@@ -41,7 +41,7 @@ const steps = [
   },
 ];
 
-const HowItWorksSection = () => {
+export default function HowItWorksSection() {
   return (
     <Container maxWidth="lg">
       <Typography
@@ -82,6 +82,4 @@ const HowItWorksSection = () => {
       </Box>
     </Container>
   );
-};
-
-export default HowItWorksSection;
+}

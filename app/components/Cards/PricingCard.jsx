@@ -9,7 +9,7 @@ import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import LinkButton from "../Buttons/LinkButton";
 
-const PricingCard = (props) => {
+export default function PricingCard(props) {
   return (
     <Card
       raised={true}
@@ -24,7 +24,11 @@ const PricingCard = (props) => {
     >
       <CardHeader
         subheader={<Divider />}
-        title={<Typography variant="subheading">{props.title}</Typography>}
+        title={
+          <Typography variant="subheading">
+            {props.title || "Transcription"}
+          </Typography>
+        }
       />
 
       <CardContent>
@@ -35,24 +39,24 @@ const PricingCard = (props) => {
           justifyContent="center"
         >
           <Typography variant="sectionHeader" color="primary">
-            {props.price}
+            {props.price || "$1"}
           </Typography>
           <Typography variant="bodyText1">/min</Typography>
         </Box>
-        <Typography variant="bodyText1">{props.bodyText}</Typography>
+        <Typography variant="bodyText1">
+          {props.bodyText || "Body Text"}
+        </Typography>
       </CardContent>
       <CardActions>
-        <LinkButton href={props.href} text={props.buttonText} />
+        <LinkButton href={props.href} text={props.buttonText || "Order Now"} />
       </CardActions>
     </Card>
   );
-};
+}
 
-PricingCard.defaultProps = {
-  buttonText: "Order Now",
-  bodyText: "Body Text",
-  title: "Transcription",
-  price: "$1",
-};
-
-export default PricingCard;
+// PricingCard.defaultProps = {
+//   buttonText: "Order Now",
+//   bodyText: "Body Text",
+//   title: "Transcription",
+//   price: "$1",
+// };

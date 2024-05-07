@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
-const BasicPricingSection = () => {
+export default function BasicPricingSection() {
   return (
     <Container maxWidth="lg">
       <Box textAlign="center" mb={6}>
@@ -58,6 +58,4 @@ const BasicPricingSection = () => {
       </Grid>
     </Container>
   );
-};
-
-export default BasicPricingSection;
+}

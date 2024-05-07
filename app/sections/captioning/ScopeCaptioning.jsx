@@ -1,5 +1,4 @@
 import React from "react";
-
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -32,7 +31,7 @@ const fields = [
     icon: <LocalHospitalIcon style={iconStyle} />,
   },
 ];
-const CaptioningScopeSection = () => {
+export default function CaptioningScopeSection() {
   return (
     <Container maxWidth="lg">
       <Box textAlign="center">
@@ -72,6 +71,4 @@ const CaptioningScopeSection = () => {
       </Box>
     </Container>
   );
-};
-
-export default CaptioningScopeSection;
+}

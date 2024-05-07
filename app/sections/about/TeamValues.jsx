@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Container from "@mui/material/Container";
-import { Grid } from "@mui/material";
+import Grid from "@mui/material/Grid";
 import Image from "next/image";
 
 import mission from "../../images/target.png";
@@ -39,7 +39,7 @@ const values = [
   },
 ];
 
-const TeamValuesSection = () => {
+export default function TeamValuesSection() {
   return (
     <Container maxWidth="lg">
       <Box textAlign="center" mb={6}>
@@ -110,6 +110,4 @@ const TeamValuesSection = () => {
       </Box>
     </Container>
   );
-};
-
-export default TeamValuesSection;
+}

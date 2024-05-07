@@ -10,7 +10,7 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import IconButton from "@mui/material/IconButton";
 import ContactForm from "@/app/forms/ContactForm";
 
-const ContactSection = () => {
+export default function ContactSection() {
   return (
     <Container maxWidth="lg">
       <Typography variant="subheading">Contact Us</Typography>
@@ -49,6 +49,4 @@ const ContactSection = () => {
       </Box>
     </Container>
   );
-};
-
-export default ContactSection;
+}

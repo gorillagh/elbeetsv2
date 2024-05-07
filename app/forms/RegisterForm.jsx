@@ -12,7 +12,7 @@ import { registerUser } from "@/app/lib/authActions";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import toast from "react-hot-toast";
 
-const RegisterForm = (props) => {
+export default function RegisterForm(props) {
   const initialState = { message: null, errors: {} };
   const [state, dispatch] = useFormState(registerUser, initialState);
 
@@ -58,7 +58,7 @@ const RegisterForm = (props) => {
       </Box>
     </Box>
   );
-};
+}
 
 const Fields = ({ state }) => {
   const { pending } = useFormStatus();
@@ -112,5 +112,3 @@ const SignUpButton = () => {
     />
   );
 };
-
-export default RegisterForm;

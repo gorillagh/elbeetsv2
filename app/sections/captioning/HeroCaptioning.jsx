@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
 import LinkButton from "@/app/components/Buttons/LinkButton";
 
-const CaptioningHeroSection = () => {
+export default function CaptioningHeroSection() {
   return (
     <div>
       <Container maxWidth="lg">
@@ -50,6 +50,4 @@ const CaptioningHeroSection = () => {
       </Container>
     </div>
   );
-};
-
-export default CaptioningHeroSection;
+}

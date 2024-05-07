@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
-const PricingHeroSection = () => {
+export default function PricingHeroSection() {
   return (
     <Container maxWidth="lg">
       <Box textAlign="center">
@@ -14,6 +14,4 @@ const PricingHeroSection = () => {
       </Box>
     </Container>
   );
-};
-
-export default PricingHeroSection;
+}

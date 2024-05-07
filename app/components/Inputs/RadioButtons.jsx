@@ -69,7 +69,7 @@ function BpRadio(props) {
   );
 }
 
-const RadioButtons = (props) => {
+export default function RadioButtons(props) {
   return (
     <FormControl>
       <RadioGroup
@@ -85,14 +85,20 @@ const RadioButtons = (props) => {
             control={<BpRadio />}
             label={radio.label}
           />
-        ))}
+        )) ||
+          radios.map((radio, index) => (
+            <FormControlLabel
+              key={index}
+              value={radio.value}
+              control={<BpRadio />}
+              label={radio.label}
+            />
+          ))}
       </RadioGroup>
     </FormControl>
   );
-};
+}
 
-RadioButtons.defaultProps = {
-  radios,
-};
-
-export default RadioButtons;
+// RadioButtons.defaultProps = {
+//   radios,
+// };

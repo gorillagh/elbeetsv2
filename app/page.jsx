@@ -7,7 +7,6 @@ import ClienteleSection from "./sections/home/Clientele";
 import ContactSection from "./sections/home/Contact";
 import CTASection from "./sections/home/CTA";
 import FAQSection from "./sections/home/FAQ";
-import LinkButton from "./components/Buttons/LinkButton";
 
 export default async function Home() {
   return (

@@ -27,7 +27,7 @@ const footers = [
   },
 ];
 
-const MainFooter = (props) => {
+export default function MainFooter(props) {
   return (
     <>
       <Divider sx={{ mt: 10 }} />
@@ -65,6 +65,4 @@ const MainFooter = (props) => {
       </Box>
     </>
   );
-};
-
-export default MainFooter;
+}

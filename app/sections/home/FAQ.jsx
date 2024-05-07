@@ -67,7 +67,7 @@ const faqs = [
   },
 ];
 
-const FAQSection = () => {
+export default function FAQSection() {
   return (
     <Container maxWidth="lg">
       <Box width={{ md: "70%" }} mx="auto">
@@ -75,6 +75,4 @@ const FAQSection = () => {
       </Box>
     </Container>
   );
-};
-
-export default FAQSection;
+}

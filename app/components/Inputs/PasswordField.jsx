@@ -12,7 +12,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Typography } from "@mui/material";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 
-const PasswordField = (props) => {
+export default function PasswordField(props) {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -59,8 +59,4 @@ const PasswordField = (props) => {
       </Box>
     </FormControl>
   );
-};
-
-PasswordField.defaultProps = {};
-
-export default PasswordField;
+}
