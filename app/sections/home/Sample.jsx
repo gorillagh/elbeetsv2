@@ -13,19 +13,19 @@ import Loading from "../../../public/loadingSpin.gif";
 import Thumbnail from "../../images/Translator-bro.png";
 import dynamic from "next/dynamic";
 
-const ReactPlayer = dynamic(() => import("react-player"), {
-  ssr: false,
-  loading: () => (
-    <Box
-      width="500px"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Image src={Loading} alt="loading" />
-    </Box>
-  ),
-});
+// const ReactPlayer = dynamic(() => import("react-player"), {
+//   ssr: false,
+//   loading: () => (
+//     <Box
+//       width="500px"
+//       display="flex"
+//       alignItems="center"
+//       justifyContent="center"
+//     >
+//       <Image src={Loading} alt="loading" />
+//     </Box>
+//   ),
+// });
 
 const services = [
   {
@@ -82,31 +82,31 @@ const SampleSection = () => {
       </Typography>
       <Grid container spacing={2} disableEqualOverflow={true}>
         <Grid item xs={12} md={7} display="flex" alignItems="center">
-          <Box>
+          {/* <Box>
             <ReactPlayer
-              // light={
-              //   <Box
-              //     width="500px"
-              //     display="flex"
-              //     alignItems="center"
-              //     justifyContent="center"
-              //   >
-              //     <Image
-              //       width={400}
-              //       height={400}
-              //       src={Thumbnail}
-              //       alt="Thumbnail"
-              //       // fill
-              //       // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              //     />
-              //   </Box>
-              // }
+              light={
+                <Box
+                  width="500px"
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                >
+                  <Image
+                    width={400}
+                    height={400}
+                    src={Thumbnail}
+                    alt="Thumbnail"
+                    // fill
+                    // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </Box>
+              }
               ref={playerRef}
               controls
               onProgress={handleProgress}
               url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
             />
-          </Box>
+          </Box> */}
         </Grid>
         <Grid
           item
