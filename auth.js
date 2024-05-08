@@ -26,7 +26,6 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
   // session:{
   //   strategy: "jwt"
   // },
-
   providers: [
     Google,
     Credentials({
@@ -50,6 +49,7 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
       },
     }),
   ],
+
   callbacks: {
     async signIn({ user, account, profile }) {
       console.log("user---->", user);

@@ -7,7 +7,6 @@ import MainFooter from "./components/Footers/MainFooter";
 import { Toaster } from "react-hot-toast";
 import SessionProvider from "@/SessionProvider";
 import { auth } from "@/auth";
-import { redirect } from "next/navigation";
 
 export const metadata = {
   title: {
@@ -23,17 +22,18 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <SessionProvider session={session && session}>
-        <AppRouterCacheProvider options={{ key: "mui" }}>
-          <ThemeProvider theme={theme}>
-            <body>
+      <body>
+        <SessionProvider session={session && session}>
+          <AppRouterCacheProvider options={{ key: "mui" }}>
+            <ThemeProvider theme={theme}>
               <Toaster position="top-center" />
-              <MainNav session={session} /> {children}
+              <MainNav session={session} />
+              {children}
               <MainFooter />
-            </body>
-          </ThemeProvider>
-        </AppRouterCacheProvider>
-      </SessionProvider>
+            </ThemeProvider>
+          </AppRouterCacheProvider>
+        </SessionProvider>
+      </body>
     </html>
   );
 }

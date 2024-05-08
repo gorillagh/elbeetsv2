@@ -1,10 +1,10 @@
-import React from "react";
+import * as React from "react";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
-import NavLink from "../Links/NavLink";
 import FooterLink from "../Links/FooterLink";
-import { Box, Container } from "@mui/material";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 
 const footers = [
   {
@@ -49,7 +49,6 @@ export default function MainFooter(props) {
               </Grid>
             ))}
           </Grid>
-          {/* </Container> */}
           <Typography
             variant="body2"
             color="text.secondary"
