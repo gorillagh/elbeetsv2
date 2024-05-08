@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const { Schema, model, models } = mongoose;
 const { ObjectId } = Schema;
-import uniqueValidator from "mongoose-unique-validator";
+// import uniqueValidator from "mongoose-unique-validator";
 
 const userSchema = new Schema(
   {
@@ -87,6 +87,6 @@ const userSchema = new Schema(
   { timestamps: true } // Automatically add createdAt and updatedAt timestamps
 );
 
-userSchema.plugin(uniqueValidator, { message: "is already taken" });
+// userSchema.plugin(uniqueValidator, { message: "is already taken" });
 
 export default models.User || model("User", userSchema);
