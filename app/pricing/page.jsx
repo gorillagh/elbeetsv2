@@ -48,6 +48,7 @@ export default function PricingPage() {
                 text="Place an Order"
                 href="/"
                 fontSize="1.3rem"
+                type="secondary"
               />
             </Box>
           </Box>

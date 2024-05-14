@@ -48,7 +48,11 @@ export default function PricingCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <LinkButton href={props.href} text={props.buttonText || "Order Now"} />
+        <LinkButton
+          href={props.href}
+          text={props.buttonText || "Order Now"}
+          type="secondary"
+        />
       </CardActions>
     </Card>
   );

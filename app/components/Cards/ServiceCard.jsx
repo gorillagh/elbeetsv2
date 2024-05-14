@@ -39,6 +39,7 @@ export default function ServiceCard(props) {
         <LinkButton
           text={props.buttonText || "Place Order"}
           href={props.href || "/"}
+          type="secondary"
         />
       </CardActions>
     </Card>

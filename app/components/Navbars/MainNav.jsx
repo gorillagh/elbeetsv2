@@ -25,6 +25,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "@mui/material";
 import { logout } from "@/app/lib/authActions";
+import NavServices from "../Links/NavServices";
 
 const pages = ["Pricing", "Support", "About"];
 const settings = ["Dashboard", "Profile", "Account"];
@@ -198,23 +199,7 @@ export default function MainNav(props) {
             <Box
               sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }}
             >
-              <Box
-                sx={{
-                  display: {
-                    xs: "none",
-                    md: "flex",
-                  },
-                  alignItems: "center",
-                  justifyContent: "center",
-                  mr: 2,
-                }}
-              >
-                <NavLink
-                  endIcon={<KeyboardArrowDownIcon color="primary" />}
-                  pathname={`/services`}
-                  text="Services"
-                />
-              </Box>
+              <NavServices />
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 {pages.map((page, index) => (
                   <Box

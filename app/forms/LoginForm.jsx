@@ -11,6 +11,7 @@ import { useFormState, useFormStatus } from "react-dom";
 import { authenticate, signInWithGoogle } from "@/app/lib/authActions";
 import { useRouter, useSearchParams } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
+import LoadingSpin from "../components/Feebacks/CircularProgress";
 
 export default function LoginForm(props) {
   const initialState = { message: null, errors: {} };
@@ -50,20 +51,7 @@ export default function LoginForm(props) {
           </>
         )}
         {state?.sucess && <p>{state.data}</p>}
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          my={3}
-        >
-          <BodyLink
-            text="Forgot Password"
-            pathname="password/forgot"
-            color="error"
-            textDecoration="none"
-          />
-          <BodyLink text="Sign Up" pathname="/register" />
-        </Box>
+        <BottomLinks />
       </Box>
     </Box>
   );
@@ -93,13 +81,43 @@ const LoginButton = () => {
   const { pending } = useFormStatus();
   return (
     <>
-      <ActionButton
-        text="Log In"
-        color="primary"
-        my={3}
-        type="submit"
-        disabled={pending}
-      />
+      {pending ? (
+        <Box mt={2}>
+          <LoadingSpin />
+        </Box>
+      ) : (
+        <ActionButton
+          text="Log In"
+          color="primary"
+          my={3}
+          type="submit"
+          disabled={pending}
+        />
+      )}
+    </>
+  );
+};
+
+const BottomLinks = () => {
+  const { pending } = useFormStatus();
+  return (
+    <>
+      {!pending && (
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          my={3}
+        >
+          <BodyLink
+            text="Forgot Password"
+            pathname="password/forgot"
+            color="error"
+            textDecoration="none"
+          />
+          <BodyLink text="Sign Up" pathname="/register" />
+        </Box>
+      )}
     </>
   );
 };

@@ -78,7 +78,7 @@ export default function HowItWorksSection() {
         <BodyLink text="Learn More" pathname="/how-it-works" />
       </Box>
       <Box width={{ xs: "80%", md: "40%" }} mx="auto">
-        <LinkButton href="/" text="Start Now" />
+        <LinkButton href="/" text="Start Now" type="secondary" />
       </Box>
     </Container>
   );
