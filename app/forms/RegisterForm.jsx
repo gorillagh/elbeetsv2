@@ -8,13 +8,17 @@ import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 import { useFormState, useFormStatus } from "react-dom";
-import { registerUser } from "@/app/lib/authActions";
+import { registerUser, signInWithGoogle } from "@/app/lib/authActions";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import toast from "react-hot-toast";
+import { useRouter, useSearchParams } from "next/navigation";
+import LoadingSpin from "../components/Feebacks/CircularProgress";
 
 export default function RegisterForm(props) {
   const initialState = { message: null, errors: {} };
   const [state, dispatch] = useFormState(registerUser, initialState);
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl") || "/user/dashboard";
 
   useEffect(() => {
     state?.error && toast.error(state.error);
@@ -23,13 +27,14 @@ export default function RegisterForm(props) {
 
   return (
     <Box width={{ md: "40%" }} mx="auto" my={6}>
-      <Box>
-        <ActionButton
-          onClick={() => {
-            toast.success("here is a toast");
-          }}
-          text="With Google"
-        />
+      <Box
+        component="form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          signInWithGoogle(callbackUrl);
+        }}
+      >
+        <ActionButton type="submit" text="With Google" />
       </Box>
       <Divider variant="middle" sx={{ my: 4 }}>
         <Typography variant="subSubheading" color="text.secondary">
@@ -103,12 +108,40 @@ const SignUpButton = () => {
   const { pending } = useFormStatus();
 
   return (
-    <ActionButton
-      text="Continue"
-      color="primary"
-      my={3}
-      type="submit"
-      disabled={pending}
-    />
+    <>
+      {pending ? (
+        <Box mt={2}>
+          <LoadingSpin />
+        </Box>
+      ) : (
+        <ActionButton
+          text="Log In"
+          color="primary"
+          my={3}
+          type="submit"
+          disabled={pending}
+        />
+      )}
+    </>
+  );
+};
+
+const BottomLinks = () => {
+  const { pending } = useFormState();
+  return (
+    <>
+      {!pending ? (
+        ""
+      ) : (
+        <Box
+          display="flex"
+          justifyContent="flex-end"
+          alignItems="center"
+          my={3}
+        >
+          <BodyLink text="Login" pathname="/login" />
+        </Box>
+      )}
+    </>
   );
 };

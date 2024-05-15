@@ -50,7 +50,7 @@ export default function LoginForm(props) {
             </Typography>
           </>
         )}
-        {state?.sucess && <p>{state.data}</p>}
+        {state?.success && <p>{state.data}</p>}
         <BottomLinks />
       </Box>
     </Box>
