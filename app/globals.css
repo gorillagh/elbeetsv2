@@ -85,6 +85,10 @@ body {
   overflow-x: hidden;
 }
 
+.MuiSelect-iconOutlined {
+  color: white !important;
+}
+
 /* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

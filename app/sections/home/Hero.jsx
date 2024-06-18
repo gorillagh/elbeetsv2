@@ -68,7 +68,7 @@ export default function HeroSection() {
               ))}
             </Box>
             <Box width={{ md: "80%" }}>
-              <LinkButton text="Place an order" type="primary" />
+              <LinkButton text="Place an order" type="primary" href="/order" />
             </Box>
           </Box>
         </Grid>

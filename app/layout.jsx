@@ -16,7 +16,7 @@ export const metadata = {
   description: "Transcription, Captioning and Translation Website",
 };
 
-export default async function RootLayout({ children }) {
+export default async function RootLayout({ order, children }) {
   const session = await auth();
   session?.user && console.log(session.user);
 
@@ -28,6 +28,7 @@ export default async function RootLayout({ children }) {
             <ThemeProvider theme={theme}>
               <Toaster position="top-center" />
               <MainNav session={session} />
+              {order}
               {children}
               <MainFooter />
             </ThemeProvider>

@@ -348,7 +348,7 @@ export default function MainNav(props) {
                     mx={2}
                     text="Get Started"
                     fullWidth={false}
-                    onClick={() => router.push("/")}
+                    onClick={() => router.push("/chooseorder")}
                   />
                 </Box>
               )}
