@@ -28,7 +28,7 @@ export default async function RootLayout({ order, children }) {
             <ThemeProvider theme={theme}>
               <Toaster position="top-center" />
               <MainNav session={session} />
-              {order}
+              {/* {order} */}
               {children}
               <MainFooter />
             </ThemeProvider>

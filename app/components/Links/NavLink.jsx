@@ -11,7 +11,7 @@ export default function NavLink(props) {
       }}
       scroll={props.scroll || true}
       {...props}
-      legacyBehavior
+      // legacyBehavior
     >
       <Button endIcon={props.endIcon}>{props.text || "Link text"}</Button>
     </Link>

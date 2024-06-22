@@ -12,7 +12,7 @@ import TranscriptionProcessSection from "@/app/sections/transcription/Transcript
 import LinkButton from "@/app/components/Buttons/LinkButton";
 
 export const metadata = {
-  title: "Transcription",
+  title: "Translation",
 };
 
 export default function TranslationPage() {

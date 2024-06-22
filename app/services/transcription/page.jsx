@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function TranscriptionPage() {
   return (
-    <div>
+    <Box>
       <Box mb={5} py={12}>
         <TranscriptionHeroSection />
       </Box>
@@ -99,6 +99,6 @@ export default function TranscriptionPage() {
       <Box mb={5} py={6}>
         <TranscriptionFAQSection />
       </Box>
-    </div>
+    </Box>
   );
 }
