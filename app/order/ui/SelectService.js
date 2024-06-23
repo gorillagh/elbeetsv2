@@ -29,7 +29,8 @@ export default function SelectService() {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      my={5}
+      mt={2}
+      // mb={5}
       width={{ md: "30%" }}
     >
       <Typography variant="subSubheading" mr={5}>

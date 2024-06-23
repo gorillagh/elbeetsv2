@@ -36,7 +36,10 @@ export default function ServiceSelect(props) {
         label="Service"
         onChange={props.handleChange}
         // autoWidth
-        sx={{ bgcolor: "primary.main", color: "#fff", fontWeight: "700" }}
+        sx={{ bgcolor: "primary.main", color: "#fff", fontWeight: "700",boxShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)",
+          "&:hover": {
+            boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+          }, }}
         size="large"
         IconComponent={ArrowDropDownIcon}
       >
