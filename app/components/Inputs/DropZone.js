@@ -58,7 +58,7 @@ const DropZone = ({
           )}
 
           <Box display="flex" alignItems="center" justifyContent="center">
-            <Box width="60%">
+            <Box width="90%">
               <ActionButton
                 sx={{ textTransform: "none" }}
                 variant={files && files.length ? "outlined" : "contained"}
