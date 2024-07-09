@@ -29,9 +29,9 @@ const footers = [
 
 export default function MainFooter(props) {
   return (
-    <>
-      <Divider sx={{ mt: 10 }} />
-      <Box id="sample-section" py={6} bgcolor="#F9E8E4">
+    <Box bgcolor="#F9E8E4" sx={{ pt: 5 }}>
+      {/* <Divider sx={{ maxWidth: "lg", mx: "auto" }} /> */}
+      <Box id="sample-section" py={6}>
         <Container maxWidth="lg">
           <Grid container spacing={4} justifyContent="left">
             {footers.map((footer) => (
@@ -62,6 +62,6 @@ export default function MainFooter(props) {
           </Typography>
         </Container>
       </Box>
-    </>
+    </Box>
   );
 }

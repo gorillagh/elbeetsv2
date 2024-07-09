@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Typewriter from "typewriter-effect";
 import CheckIcon from "@mui/icons-material/Check";
@@ -21,6 +21,16 @@ const heroItems = [
 ];
 
 export default function HeroSection() {
+  const [isTypewriterReady, setIsTypewriterReady] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsTypewriterReady(true);
+    }, 1000); // Adjust the timeout duration as needed
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Container maxWidth="lg">
       <Grid container spacing={12} disableEqualOverflow={true}>
@@ -28,17 +38,21 @@ export default function HeroSection() {
           <Box>
             <Typography variant="bigTitle">Fast, Accurate</Typography>
             <Typography variant="bigTitle" color="primary.light">
-              <Typewriter
-                options={{
-                  strings: [
-                    "<span>Transcription</span>",
-                    "<span>Captioning</span>",
-                    "<span>Translation</span>",
-                  ],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
+              {isTypewriterReady ? (
+                <Typewriter
+                  options={{
+                    strings: [
+                      "<span>Transcription</span>",
+                      "<span>Captioning</span>",
+                      "<span>Translation</span>",
+                    ],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+              ) : (
+                "Transcription"
+              )}
             </Typography>
             <Typography variant="bigTitle">Services.</Typography>
             <Box my={3}>

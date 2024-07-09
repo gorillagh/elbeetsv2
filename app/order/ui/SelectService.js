@@ -34,11 +34,11 @@ export default function SelectService() {
       // mb={5}
       // width={{ md: "30%" }}
     >
-      <Typography variant="subSubheading" mr={5}>
+      {/* <Typography variant="subSubheading" mr={5}>
         Service
-      </Typography>
+      </Typography> */}
       <ServiceSelect
-        fullWidth
+        // fullWidth
         services={services}
         service={service}
         handleChange={handleChange}

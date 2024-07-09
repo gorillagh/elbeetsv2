@@ -1,21 +1,20 @@
 "use client";
+import { useState } from "react";
 import ActionButton from "@/app/components/Buttons/ActionButton";
 import LoadingSpin from "@/app/components/Feebacks/CircularProgress";
 import { Card, Grid, Typography } from "@mui/material";
 
 const cardStyle = {
   m: 1,
-  // p: 1,
+  p: 2,
   display: "flex",
   flexDirection: "column",
-  // borderRadius: "16px",
-  background: " rgba(239, 240, 235, 0.7)",
+  background: "rgba(255,255,255,0.5)",
   webkitBackdropFilter: "blur(5px)",
   border: "1px solid rgba(255, 255, 255, 0.9)",
 };
-const totalCost = 60;
-const filesInQueue = 4;
-export default function CheckoutCard() {
+
+export default function CheckoutCard({ totalCost, filesInQueue }) {
   return (
     <Card sx={cardStyle}>
       <Grid container justifyContent="space-between" px={2}>
@@ -26,18 +25,17 @@ export default function CheckoutCard() {
         </Grid>
         <Grid item>
           <Typography component="span" variant="h5" fontWeight={700}>
-            {filesInQueue > 0 || !totalCost ? (
-              <LoadingSpin size={20} thickness={4} />
+            {!totalCost ? (
+              <LoadingSpin size={25} thickness={4} />
             ) : (
-              `$${totalCost}`
-              // "$" + totalCost
+              `$${totalCost.toFixed(2)}`
             )}
           </Typography>
         </Grid>
       </Grid>
 
       <ActionButton
-        disabled={filesInQueue > 0}
+        disabled={!totalCost}
         my={0}
         text="Checkout"
         rightIcon="arrow_forward"

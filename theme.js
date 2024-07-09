@@ -74,7 +74,7 @@ const theme = createTheme({
       default: "#FFF",
     },
 
-    divider: "rgba(0, 0, 0, 0.08)",
+    divider: "rgba(0, 0, 0, 0.1)",
   },
   shape: {
     borderRadius: 14,

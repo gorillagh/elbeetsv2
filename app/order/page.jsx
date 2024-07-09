@@ -6,10 +6,46 @@ import UploadedFiles from "./ui/UploadedFiles";
 import { Box, Typography } from "@mui/material";
 import CheckoutCard from "./ui/CheckoutCard";
 const files = [
-  { id: "001", total: 50 },
-  { id: "002", total: 50 },
-  { id: "002", total: 50 },
-  { id: "002", total: 50 },
+  {
+    id: "001",
+    name: "File 1",
+    total: 50,
+    duration: 5,
+    cost: 50,
+    express: false,
+    timeStamp: false,
+    verbatim: false,
+  },
+  {
+    id: "002",
+    name: "File 2",
+    total: 20,
+    duration: 2,
+    cost: 50,
+    express: false,
+    timeStamp: false,
+    verbatim: false,
+  },
+  {
+    id: "003",
+    name: "File 3",
+    total: 50,
+    duration: 5,
+    cost: 50,
+    express: false,
+    timeStamp: false,
+    verbatim: false,
+  },
+  {
+    id: "004",
+    name: "File 4",
+    total: 50,
+    duration: 5,
+    cost: 50,
+    express: false,
+    timeStamp: false,
+    verbatim: false,
+  },
 ];
 export default function Page() {
   return (
@@ -28,21 +64,21 @@ export default function Page() {
             <Box
               display="flex"
               alignItems="center"
-              width="100%"
+              width="95%"
               justifyContent="left"
               mt={2}
               mb={1}
-              ml={2}
+              mx="auto"
             >
               <Typography variant="subSubheading">Added Files</Typography>
             </Box>
-            <UploadedFiles />
+            <UploadedFiles files={files} />
           </Grid>
         ) : (
           ""
         )}
       </Grid>
-      {files.length ? (
+      {/* {files.length ? (
         <Grid container>
           <Grid item xs={12}>
             <Grid container justifyContent="right">
@@ -54,7 +90,7 @@ export default function Page() {
         </Grid>
       ) : (
         ""
-      )}
+      )} */}
     </Container>
   );
 }

@@ -71,6 +71,9 @@ function BpCheckbox(props) {
 
 export default function CheckboxInput(props) {
   return (
-    <FormControlLabel control={<BpCheckbox />} label={props.label || "Label"} />
+    <FormControlLabel
+      control={<BpCheckbox onChange={props.onChange} />}
+      label={props.label || "Label"}
+    />
   );
 }
