@@ -6,8 +6,8 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Box from "@mui/material/Box";
-import ActionButton from "../../components/Buttons/ActionButton";
-import DropZone from "../../components/Inputs/DropZone";
+import ActionButton from "@/app/components/Buttons/ActionButton";
+import DropZone from "@/app/components/Inputs/DropZone";
 // import { toast } from "react-toastify";
 
 const cardStyle = {

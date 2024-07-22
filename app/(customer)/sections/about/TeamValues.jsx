@@ -6,7 +6,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Image from "next/image";
 
-import mission from "../../images/target.png";
+import mission from "@/app/images/target.png";
 const values = [
   {
     number: 1,
