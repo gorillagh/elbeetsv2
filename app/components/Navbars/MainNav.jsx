@@ -17,14 +17,13 @@ import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import MenuItem from "@mui/material/MenuItem";
 import PersonIcon from "@mui/icons-material/Person";
-import logo from "../../images/logo1.png";
 import NavLink from "../Links/NavLink";
 import ActionButton from "../Buttons/ActionButton";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "@mui/material";
-import { logout } from "@/app/lib/authActions";
+import { logout } from "../../lib/authActions";
 import NavServices from "../Links/NavServices";
 
 const pages = ["Pricing", "Support", "About"];
@@ -54,7 +53,7 @@ export default function MainNav(props) {
         }}
       >
         <Link href="/" scroll={true} legacyBehavior>
-          <Image width={32} height={23} src={logo} alt="Elbee logo" />
+          <Image width={32} height={23} src="/logo1.png" alt="Elbee logo" />
         </Link>
         <NavLink text="Elbee" href="/" color="#000" />
       </Box>
@@ -111,7 +110,7 @@ export default function MainNav(props) {
           <Toolbar disableGutters>
             {/* ///////////////////Desktop/////////////////// */}
             <Typography sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
-              <Image width={40} height={40} src={logo} alt="Elbee logo" />
+              <Image width={40} height={40} src="/logo1.png" alt="Elbee logo" />
             </Typography>
             <Typography
               variant="h5"
@@ -172,7 +171,12 @@ export default function MainNav(props) {
             </Box>
             <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}>
               <Link href="/">
-                <Image width={32} height={32} src={logo} alt="Elbee logo" />
+                <Image
+                  width={32}
+                  height={32}
+                  src="/logo1.png"
+                  alt="Elbee logo"
+                />
               </Link>
             </Box>
             <Typography

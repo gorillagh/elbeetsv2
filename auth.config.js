@@ -5,17 +5,17 @@ export const authConfig = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.id = user._id;
-        token.email_verified = user.email_verified;
-        token.roles = user.roles;
+        token.id = await user._id;
+        token.email_verified = await user.email_verified;
+        token.roles = await user.roles;
       }
       return token;
     },
     async session({ session, token }) {
       if (token) {
-        session.user._id = token.id;
-        session.user.email_verified = token.email_verified;
-        session.user.roles = token.roles;
+        session.user._id = await token.id;
+        session.user.email_verified = await token.email_verified;
+        session.user.roles = await token.roles;
       }
       return session;
     },

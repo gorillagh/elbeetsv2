@@ -27,7 +27,35 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
   //   strategy: "jwt"
   // },
   providers: [
-    Google,
+    Google({
+      // find the user in the database and set it to the google user
+      async profile(profile) {
+        await dbConnect();
+        let existingUser = await getUser(profile.email);
+        if (!existingUser) {
+          existingUser = new User({
+            googleId: profile.sub,
+            name: profile.name,
+            email: profile.email,
+            email_verified: profile.email_verified,
+            picture: profile.picture,
+          });
+          await existingUser.save();
+        } else if (!existingUser.googleId) {
+          existingUser.googleId = profile.sub;
+          await existingUser.save();
+        }
+        console.log("Existing--->", existingUser);
+        return {
+          _id: existingUser._id,
+          name: existingUser.name,
+          email: existingUser.email,
+          email_verified: existingUser.email_verified,
+          picture: existingUser.picture,
+          roles: existingUser.roles,
+        };
+      },
+    }),
     Credentials({
       // credentials:{email:{}, password:{}, },
       async authorize(credentials) {
@@ -65,7 +93,7 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
             email_verified: profile.email_verified,
             picture: user.image,
           }).save();
-          return true;
+          // return true;
         }
         if (existingUser.googleId && existingUser.googleId === user.id)
           return true;
@@ -74,6 +102,7 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
       }
       return true;
     },
+
     // async redirect({ url, baseUrl }) {
     //   // Allows relative callback URLs
     //   if (url.startsWith("/")) return `${baseUrl}${url}`;
