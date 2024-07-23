@@ -12,6 +12,7 @@ export default function Layout({ children }) {
         }}
       />
       <div className="flex-grow p-6 md:overflow-y-auto md:p-12">{children}</div>
+      {/* <div className="hidden md:block min-h-[168px] w-full md:h-screen md:w-64"></div> */}
     </div>
   );
 }

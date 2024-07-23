@@ -13,7 +13,7 @@ const userSchema = new Schema(
       trim: true,
       index: true,
       unique: true, // Ensures unique emails
-      // required: true, // Requires an email for user creation
+      required: true, // Requires an email for user creation
       match: [/.+@.+\..+/, "Please fill a valid email address"], // Basic email format validation
       lowercase: true, // Converts email to lowercase
     },
