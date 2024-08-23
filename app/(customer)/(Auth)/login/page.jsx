@@ -13,10 +13,10 @@ export default function Login({ searchParams }) {
     <Box py={10}>
       <Container maxWidth="lg">
         <Box textAlign="center">
-          <Typography variant="bigTitle">Welcome back!</Typography>
-          <Typography variant="subSubheading" my={2}>
+          <Typography variant="subheading">Log In</Typography>
+          {/* <Typography variant="subSubheading" my={2}>
             Please log in
-          </Typography>
+          </Typography> */}
         </Box>
 
         <Box>
